@@ -1,0 +1,50 @@
+{% load static tailwind_tags %}
+
+{% tailwind_css %}
+
+{% block content %}
+  <h1 class="text-4xl text-red-500">hello</h1>
+  <p class="text-2xl text-blue-500">The quick brown fox ...</p>
+
+
+
+
+  <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 " role="alert">
+    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+  </div>
+  <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 " role="alert">
+    <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+  </div>
+
+  <button class="btn btn-info">click me!</button>
+  
+  <!-- Open the modal using ID.showModal() method -->
+<button class="btn" onclick="my_modal_2.showModal()">open modal</button>
+<dialog id="my_modal_2" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Hello!</h3>
+    <p class="py-4">Press ESC key or click outside to close</p>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
+
+<div class="drawer">
+  <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content">
+    <!-- Page content here -->
+    <label for="my-drawer" class="btn btn-primary drawer-button">Open drawer</label>
+  </div>
+  <div class="drawer-side">
+    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+      <!-- Sidebar content here -->
+      <li><a>Sidebar Item 1</a></li>
+      <li><a>Sidebar Item 2</a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
